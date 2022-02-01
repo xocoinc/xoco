@@ -21,6 +21,16 @@ router.post("/register", (req, res) =>{
             message:"password should not be less than 8 characters"
         })
     }
+    if(password != confirmPassword){
+        error.push({
+            message:"The  passwords must much"
+        })
+    }
+    if(error > 0){
+        res.render("register")
+    } else {
+        //
+    }
 })
 
 module.exports = router
