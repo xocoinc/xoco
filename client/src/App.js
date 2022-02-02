@@ -1,7 +1,9 @@
+import Header from "./components/header/Header";
+
 function App() {
   return (
-    <div className="App">
-      <h1>This is Xoco</h1>
+    <div className="app">
+      <Header/>
     </div>
   );
 }
