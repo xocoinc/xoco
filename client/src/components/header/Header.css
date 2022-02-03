@@ -1,6 +1,7 @@
 .header{
     background-color: #ffff00;
     display: flex;
+    padding: 10px;
     column-gap: 10px;
     align-items: center;
     position: sticky;
@@ -12,7 +13,7 @@
     object-fit: contain;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 18px;
+    /* margin-top: 18px; */
 }
 .nav__search{
     display: flex;
@@ -54,4 +55,20 @@
     padding: 10px;
     height: 22px !important;
     background-color: whitesmoke;
+}
+
+.sell__buttoncontent{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #5bccf6;
+    padding: 8px;
+    border-radius: 10px;
+}
+.sell__buttoncontent > h5{
+    text-align: center;
+    font-size: larger;
+}
+.sell__icon, h5{
+    color: yellow;
 }
