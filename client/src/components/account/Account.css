@@ -1,0 +1,44 @@
+.account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin: 0 auto;
+  background-color: yellow;
+  align-items: center;
+  margin-top: 10%;
+  row-gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.account > img {
+  width: 300px;
+}
+
+.login,
+.register {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #5bccf6;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.login:hover {
+  background-color: white;
+}
+.register:hover {
+  background-color: white;
+}
+.accountButtons {
+  display: flex;
+  column-gap: 20px;
+}
+.login,
+.register > span {
+  font-weight: 700;
+  font-size: x-large;
+  color: yellow;
+  text-align: center;
+}
