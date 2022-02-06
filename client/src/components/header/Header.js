@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <nav className="header">
-      <a href="/home">
+      <Link to="/">
         <img src={logo} alt="" className="nav__logo" />
-      </a>
+      </Link>
       <div className="nav__search">
         <input type="text" className="search" placeholder="Search items" />
         <SearchIcon className="search__icon" />
@@ -23,20 +23,20 @@ const Header = () => {
           <AccountCircleIcon className="optionlineOne" />
           <span className="optionlineTwo">Account</span>
         </Link>
-        <div className="nav__options">
+        <Link to="/Help" className="nav__options">
           <HelpOutlineIcon className="optionlineOne" />
           <span className="optionlineTwo">Help</span>
-        </div>
-        <div className="nav__options">
+        </Link>
+        <Link to='/cart' className="nav__options">
           <AddShoppingCartIcon className="optionlineOne" />
           <span className="optionlineTwo">Cart</span>
-        </div>
-        <div className="sell__button">
+        </Link>
+        <Link to='/sell' className="sell__button">
           <span className="sell__buttoncontent">
             <AttachMoneyIcon className="sell__icon" />
             <h5>Sell</h5>
           </span>
-        </div>
+        </Link>
       </div>
     </nav>
   );
