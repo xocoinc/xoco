@@ -57,6 +57,9 @@
   height: 22px !important;
   background-color: whitesmoke;
 }
+.sell__button{
+  text-decoration: none;
+}
 
 .sell__buttoncontent {
   display: flex;
@@ -74,3 +77,4 @@
 h5 {
   color: yellow;
 }
+
