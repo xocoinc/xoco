@@ -5,14 +5,13 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import "./Header.css";
-import logo from "./xoco blue (2).png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <nav className="header">
       <Link to="/">
-        <img src={logo} alt="" className="nav__logo" />
+        <img src={`${process.env.PUBLIC_URL}/assets/images/logo.png`} alt="" className="nav__logo" />
       </Link>
       <div className="nav__search">
         <input type="text" className="search" placeholder="Search items" />

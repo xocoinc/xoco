@@ -1,4 +1,4 @@
-import Home from "./components/home/Home";
+// import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import Login from "./components/login/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -6,6 +6,8 @@ import Account from "./components/account/Account";
 import Cart from "./components/cart/Cart";
 import Sell from "./components/sell/Sell";
 import Help from "./components/help/Help";
+import Slider from "./components/slider/Slider";
+
 
 function App() {
   return (
@@ -29,7 +31,7 @@ function App() {
             <Login />
           </Route>
           <Route path='/'>
-            <Home />
+            <Slider />
           </Route>
         </Switch>
       </Router>
