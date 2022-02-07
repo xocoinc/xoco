@@ -1,11 +1,10 @@
-import logo from "./xoco blue (2).png";
 import "./Login.css";
 
 const Login = () => {
   return (
     <div className="login__page">
       <div className="logo">
-        <img src={logo} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/assets/images/logo.png`} alt="" />
       </div>
       <form className="input__fields">
         <h4>Username/email</h4>
