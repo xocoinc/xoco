@@ -8,7 +8,6 @@ import Sell from "./components/sell/Sell";
 import Help from "./components/help/Help";
 import Slider from "./components/slider/Slider";
 
-
 function App() {
   return (
     <div className="app">
