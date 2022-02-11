@@ -1,4 +1,3 @@
-// import Home from "./components/home/Home";
 import Header from "./components/header/Header"
 import Login from "./components/login/Login"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
@@ -7,6 +6,8 @@ import Cart from "./components/cart/Cart"
 import Sell from "./components/sell/Sell"
 import Help from "./components/help/Help"
 import Slider from "./components/slider/Slider"
+import Categories from "./components/home/Categories"
+import Products from "./components/home/Products"
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           </Route>
           <Route path="/">
             <Slider />
+            <Categories />
+            <Products />
           </Route>
         </Switch>
       </Router>
