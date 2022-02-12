@@ -1,13 +1,39 @@
 .product{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex: 1;
     margin: 5px;
-    min-width: 280px;
-    height: 350px;
+    min-width: 200px;
+    height: 280px;
+    background-color: white;
 
 }
+.product:hover{
+    transform: scale(1.02);
+}
 .product > img{
-    height: 75%;
+    width:150px;
+    height: 150px;
+    object-fit: contain;
+}
+.info-container{
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.info-container > p{
+    text-align: center;
+    padding: 8px;
+}
+.link{
+    text-align: center;
+    bottom: 0;
 }
