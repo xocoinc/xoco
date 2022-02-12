@@ -23,11 +23,11 @@ export const categories = [
 export const popularProduct = [
   {
     id: 1,
-    img: `${process.env.PUBLIC_URL}/assets/images/lp1.jpeg`,
+    img: `${process.env.PUBLIC_URL}/assets/images/lp1.png`,
   },
   {
     id: 2,
-    img: `${process.env.PUBLIC_URL}/assets/images/lp3.jpg`,
+    img: `${process.env.PUBLIC_URL}/assets/images/lp3.png`,
   },
   {
     id: 3,
@@ -35,11 +35,12 @@ export const popularProduct = [
   },
   {
     id: 4,
-    img: `${process.env.PUBLIC_URL}/assets/images/p2.jpg`,
+    img: `${process.env.PUBLIC_URL}/assets/images/p2.png`,
+    title: "a koa wood table good stuff",
   },
   {
     id: 5,
-    img: `${process.env.PUBLIC_URL}/assets/images/p3.jpeg`,
+    img: `${process.env.PUBLIC_URL}/assets/images/p3.png`,
   },
   {
     id: 6,
@@ -51,7 +52,7 @@ export const popularProduct = [
   },
   {
     id: 8,
-    img: `${process.env.PUBLIC_URL}/assets/images/p7.jpeg`,
+    img: `${process.env.PUBLIC_URL}/assets/images/p7.png`,
   },
   {
     id: 9,
@@ -63,10 +64,10 @@ export const popularProduct = [
   },
   {
     id: 11,
-    img: `${process.env.PUBLIC_URL}/assets/images/p12.jpeg`,
+    img: `${process.env.PUBLIC_URL}/assets/images/p12.png`,
   },
   {
     id: 12,
-    img: `${process.env.PUBLIC_URL}/assets/images/ph15.jpeg`,
+    img: `${process.env.PUBLIC_URL}/assets/images/ph15.png`,
   },
 ]
