@@ -5,9 +5,10 @@ import Account from "./components/account/Account"
 import Cart from "./components/cart/Cart"
 import Sell from "./components/sell/Sell"
 import Help from "./components/help/Help"
-import Slider from "./components/slider/Slider"
+// import Slider from "./components/slider/Slider"
 import Categories from "./components/home/Categories"
 import Products from "./components/home/Products"
+import ProductDescription from "./components/checkout/ProductDescription"
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route path="/productDescription">
+            <ProductDescription />
+          </Route>
           <Route path="/help">
             <Help />
           </Route>
@@ -31,7 +35,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/">
-            <Slider />
+            {/* <Slider /> */}
             <Categories />
             <Products />
           </Route>
