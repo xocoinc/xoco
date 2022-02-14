@@ -1,4 +1,5 @@
 import "./ProductDescription.css"
+import { Link } from "react-router-dom"
 
 const ProductDescription = ({ item }) => {
   return (
@@ -24,7 +25,9 @@ const ProductDescription = ({ item }) => {
           to use
         </p>
         {/* Add to cart button */}
-        <button>Add to cart</button>
+        <Link to="/cart" className="link">
+          <button>Add to cart</button>
+        </Link>
         {/* recomented items */}
       </div>
     </div>
