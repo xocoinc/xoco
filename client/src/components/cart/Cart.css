@@ -1,0 +1,21 @@
+.wrapper{
+    padding: 20px;
+}
+.title{
+    font-weight: 300;
+    text-align: center;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.toptexts > span{
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 10px;
+}
+.top > button{
+    padding: 20px;
+    width: 50%;
+}
