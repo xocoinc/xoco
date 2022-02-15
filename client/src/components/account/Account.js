@@ -16,7 +16,7 @@ const Account = () => {
           </Link>
         </div>
         <div className="register">
-          <Link to="/register" className="register">
+          <Link to="/signup" className="register">
             <span>SignUp</span>
           </Link>
         </div>
