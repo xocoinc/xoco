@@ -1,5 +1,6 @@
 import Header from "./components/header/Header"
 import Login from "./components/login/Login"
+import Signup from "./components/signup/Signup"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Account from "./components/account/Account"
 import Cart from "./components/cart/Cart"
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
           <Route path="/">
             {/* <Slider /> */}
