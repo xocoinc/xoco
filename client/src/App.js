@@ -10,6 +10,7 @@ import Help from "./components/help/Help"
 import Categories from "./components/home/Categories"
 import Products from "./components/home/Products"
 import ProductDescription from "./components/checkout/ProductDescription"
+import Checkout from "./components/checkout/Checkout"
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
           <Route path="/">
             {/* <Slider /> */}
