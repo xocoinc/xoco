@@ -1,5 +1,79 @@
-.nav_bar {
+.header {
   background-color: #ffff00;
+  display: flex;
+  padding: 10px;
+  column-gap: 10px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.header_logo {
+.nav__logo {
+  width: 120px;
+  object-fit: contain;
+  margin-left: 20px;
+  margin-right: 20px;
+  /* margin-top: 18px; */
+}
+.nav__search {
+  display: flex;
+  flex: 1;
+}
+.search {
+  height: 12px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+.nav__links {
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 30px;
+  margin: 10px;
+}
+.nav__options {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.optionlineTwo {
+  font-size: 13px;
+  font-weight: 800;
+  color: #5bccf6;
+}
+.optionlineOne {
+  font-size: 16px;
+  color: #5bccf6;
+}
+.optionlineTwo:hover {
+  color: aliceblue;
+}
+.search__icon {
+  padding: 10px;
+  height: 22px !important;
+  background-color: whitesmoke;
+}
+.sell__button {
+  text-decoration: none;
+}
+
+.sell__buttoncontent {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #5bccf6;
+  padding: 8px;
+  border-radius: 10px;
+}
+.sell__buttoncontent > h5 {
+  text-align: center;
+  font-size: larger;
+}
+.sell__icon,
+h5 {
+  color: yellow;
 }

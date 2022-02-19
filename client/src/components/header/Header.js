@@ -1,43 +1,48 @@
+import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="header">
-      <nav className="nav_bar">
-        <div className="header_logo">
-          <img
-            src="https://avatars.githubusercontent.com/u/98540847?s=200&v=4"
-            alt="logo"
-          ></img>
-        </div>
-        <div className="search_bar">
-          <form>
-            <div className="input_field">
-              <input type="text" id="search" />
-              <SearchIcon />
-            </div>
-          </form>
-        </div>
-        <div className="nav_links">
-          <span>
-            <AccountCircleIcon />
-            <small>Account</small>
+    <nav className="header">
+      <Link to="/">
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/images/logo.png`}
+          alt=""
+          className="nav__logo"
+        />
+      </Link>
+      <div className="nav__search">
+        <input type="text" className="search" placeholder="Search items" />
+        <SearchIcon className="search__icon" />
+      </div>
+      <div className="nav__links">
+        <Link to="/account" className="nav__options">
+          <AccountCircleIcon className="optionlineOne" />
+          <span className="optionlineTwo">Account</span>
+        </Link>
+        <Link to="/Help" className="nav__options">
+          <HelpOutlineIcon className="optionlineOne" />
+          <span className="optionlineTwo">Help</span>
+        </Link>
+        <Link to="/cart" className="nav__options">
+          <AddShoppingCartIcon className="optionlineOne" />
+          <span className="optionlineTwo">Cart</span>
+        </Link>
+        <Link to="/sell" className="sell__button">
+          <span className="sell__buttoncontent">
+            <AttachMoneyIcon className="sell__icon" />
+            <h5>Sell</h5>
           </span>
-          <span>
-            <HelpOutlineIcon />
-            <small>Help</small>
-          </span>
-          <span>
-            <AddShoppingCartIcon className="icon" />
-            <small>Cart</small>
-          </span>
-        </div>
-      </nav>
-    </div>
+        </Link>
+      </div>
+    </nav>
   );
 };
+
 export default Header;
