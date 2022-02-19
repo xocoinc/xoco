@@ -11,7 +11,12 @@ const Header = () => {
   return (
     <nav className="header">
       <Link to="/">
-        <img src={`${process.env.PUBLIC_URL}/assets/images/logo.png`} alt="" className="nav__logo" />
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/images/logo.png`}
+          alt=""
+          className="nav__logo"
+        />
+
       </Link>
       <div className="nav__search">
         <input type="text" className="search" placeholder="Search items" />
@@ -26,11 +31,12 @@ const Header = () => {
           <HelpOutlineIcon className="optionlineOne" />
           <span className="optionlineTwo">Help</span>
         </Link>
-        <Link to='/cart' className="nav__options">
+        <Link to="/cart" className="nav__options">
           <AddShoppingCartIcon className="optionlineOne" />
           <span className="optionlineTwo">Cart</span>
         </Link>
-        <Link to='/sell' className="sell__button">
+        <Link to="/sell" className="sell__button">
+
           <span className="sell__buttoncontent">
             <AttachMoneyIcon className="sell__icon" />
             <h5>Sell</h5>
