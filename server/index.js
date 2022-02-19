@@ -13,11 +13,13 @@ require("./config/db")
 const auth = require("./routes/auth")
 const user = require("./routes/user")
 const cart = require("./routes/cart")
+const orders = require("./routes/order")
 
 //middleware
 app.use(express.json())
+app.use("/api/orders", orders)
 app.use("/api/auth", auth)
-app.use("/api/user", user)
+app.use("/api/users", user)
 app.use("/api/", cart)
 
 const port = process.env.PORT || 5000
