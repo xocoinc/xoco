@@ -16,6 +16,7 @@ const Header = () => {
           alt=""
           className="nav__logo"
         />
+
       </Link>
       <div className="nav__search">
         <input type="text" className="search" placeholder="Search items" />
@@ -35,6 +36,7 @@ const Header = () => {
           <span className="optionlineTwo">Cart</span>
         </Link>
         <Link to="/sell" className="sell__button">
+
           <span className="sell__buttoncontent">
             <AttachMoneyIcon className="sell__icon" />
             <h5>Sell</h5>
