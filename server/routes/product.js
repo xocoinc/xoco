@@ -1,96 +1,78 @@
-const Order = require("../models/Order")
-const {
-  verifyToken,
-  verifyTokenAndAuthorization,
-  verifyTokenAndAdmin,
-} = require("./verifyToken")
+const Product = require("../models/Product")
 
 const router = require("express").Router()
 
 //CREATE
 
-router.post("/", verifyToken, async (req, res) => {
-  const newOrder = new Order(req.body)
+router.post("/", async (req, res) => {
+  const newProduct = new Product(req.body)
 
   try {
-    const savedOrder = await newOrder.save()
-    res.status(200).json(savedOrder)
+    const savedProduct = await newProduct.save()
+    res.status(200).json(savedProduct)
   } catch (err) {
     res.status(500).json(err)
   }
 })
 
 //UPDATE
-router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
-    const updatedOrder = await Order.findByIdAndUpdate(
+    const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       {
         $set: req.body,
       },
       { new: true },
     )
-    res.status(200).json(updatedOrder)
+    res.status(200).json(updatedProduct)
   } catch (err) {
     res.status(500).json(err)
   }
 })
 
 //DELETE
-router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
-    await Order.findByIdAndDelete(req.params.id)
-    res.status(200).json("Order has been deleted...")
+    await Product.findByIdAndDelete(req.params.id)
+    res.status(200).json("Product has been deleted...")
   } catch (err) {
     res.status(500).json(err)
   }
 })
 
-//GET USER ORDERS
-router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {
+//GET PRODUCT
+router.get("/find/:id", async (req, res) => {
   try {
-    const orders = await Order.find({ userId: req.params.userId })
-    res.status(200).json(orders)
+    const product = await Product.findById(req.params.id)
+    res.status(200).json(product)
   } catch (err) {
     res.status(500).json(err)
   }
 })
 
-// //GET ALL
-
-router.get("/", verifyTokenAndAdmin, async (req, res) => {
+//GET ALL PRODUCTS
+router.get("/", async (req, res) => {
+  const qNew = req.query.new
+  const qCategory = req.query.category
   try {
-    const orders = await Order.find()
-    res.status(200).json(orders)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
+    let products
 
-// GET MONTHLY INCOME
-
-router.get("/income", verifyTokenAndAdmin, async (req, res) => {
-  const date = new Date()
-  const lastMonth = new Date(date.setMonth(date.getMonth() - 1))
-  const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1))
-
-  try {
-    const income = await Order.aggregate([
-      { $match: { createdAt: { $gte: previousMonth } } },
-      {
-        $project: {
-          month: { $month: "$createdAt" },
-          sales: "$amount",
+    if (qNew) {
+      products = await Product.find()
+        .sort({ createdAt: -1 })
+        .limit(1)
+    } else if (qCategory) {
+      products = await Product.find({
+        categories: {
+          $in: [qCategory],
         },
-      },
-      {
-        $group: {
-          _id: "$month",
-          total: { $sum: "$sales" },
-        },
-      },
-    ])
-    res.status(200).json(income)
+      })
+    } else {
+      products = await Product.find()
+    }
+
+    res.status(200).json(products)
   } catch (err) {
     res.status(500).json(err)
   }
