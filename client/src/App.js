@@ -11,46 +11,73 @@ import Categories from "./components/home/Categories";
 import Products from "./components/home/Products";
 import ProductDescription from "./components/checkout/ProductDescription";
 import Checkout from "./components/checkout/Checkout";
+import Address from "./components/address/Address";
 
 function App() {
-  return (
-    <div className="app">
-      <Router>
-        <Header />
-        <Switch>
-          <Route path="/productDescription">
-            <ProductDescription />
-          </Route>
-          <Route path="/help">
-            <Help />
-          </Route>
-          <Route path="/sell">
-            <Sell />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="/account">
-            <Account />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/checkout">
-            <Checkout />
-          </Route>
-          <Route path="/">
-            {/* <Slider /> */}
-            <Categories />
-            <Products />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  )
+    return ( <
+        div className = "app" >
+        <
+        Router >
+        <
+        Header / >
+        <
+        Switch >
+        <
+        Route path = "/productDescription" >
+        <
+        ProductDescription / >
+        <
+        /Route> <
+        Route path = "/help" >
+        <
+        Help / >
+        <
+        /Route> <
+        Route path = "/sell" >
+        <
+        Sell / >
+        <
+        /Route> <
+        Route path = "/cart" >
+        <
+        Cart / >
+        <
+        /Route> <
+        Route path = "/account" >
+        <
+        Account / >
+        <
+        /Route> <
+        Route path = "/login" >
+        <
+        Login / >
+        <
+        /Route> <
+        Route path = "/signup" >
+        <
+        Signup / >
+        <
+        /Route> <
+        Route path = "/checkout" >
+        <
+        Checkout / >
+        <
+        /Route> <
+        Route path = "/address" >
+        <
+        Address / >
+        <
+        /Route> <
+        Route path = "/" > { /* <Slider /> */ } <
+        Categories / >
+        <
+        Products / >
+        <
+        /Route> <
+        /Switch> <
+        /Router> <
+        /div>
+    )
 }
 
 export default App
