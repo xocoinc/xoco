@@ -55,9 +55,9 @@ const Checkout = () => {
           <h4>Password</h4>
           <input type="password" placeholder="password" />
         </div>
-        <div class="c-button">
-          <button type="submit">Proceed</button>
-        </div>
+        <Link to="/address">
+          <button type="submit" class="c-button" >Proceed</button>
+        </Link>
       </form>
     </div>
   );
