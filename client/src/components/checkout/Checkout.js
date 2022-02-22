@@ -1,4 +1,5 @@
 import "./Checkout.css";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   return (
@@ -6,9 +7,9 @@ const Checkout = () => {
       <h1>Checkout</h1>
       <form>
         <div class="c-details">
-          <h4>Mpesa Full Name</h4>
+          <h4>Full Name</h4>
           <input type="text" placeholder="Mpesa full name" />
-          <h4>Mpesa Phone Number</h4>
+          <h4>Phone Number</h4>
           <input type="tel" placeholder="+2547..." />
           <h4>Address</h4>
           <input type="text" placeholder="address" />
@@ -17,13 +18,10 @@ const Checkout = () => {
           <h4>Password</h4>
           <input type="password" placeholder="password" />
         </div>
-        <div class="c-button">
-          <button type="submit">Proceed</button>
-        </div>
+         <button type="submit" class="c-button" >Proceed</button>
       </form>
     </div>
   );
 };
 
 export default Checkout;
-
