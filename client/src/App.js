@@ -16,7 +16,7 @@ import Categories from "./components/home/Categories"
 import Products from "./components/home/Products"
 import ProductDescription from "./components/checkout/ProductDescription"
 import Checkout from "./components/checkout/Checkout"
-import Product from "./components/home/Product"
+// import Product from "./components/home/Product"
 
 function App() {
   const user = false
