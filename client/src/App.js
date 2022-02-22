@@ -11,7 +11,6 @@ import Categories from "./components/home/Categories";
 import Products from "./components/home/Products";
 import ProductDescription from "./components/checkout/ProductDescription";
 import Checkout from "./components/checkout/Checkout";
-import Address from "./components/address/Address";
 
 function App() {
     return ( <
@@ -62,21 +61,16 @@ function App() {
         <
         Checkout / >
         <
-        /Route> <
-        Route path = "/address" >
-        <
-        Address / >
-        <
-        /Route> <
+        /Route>  <
         Route path = "/" > { /* <Slider /> */ } <
         Categories / >
         <
         Products / >
         <
-        /Route> <
-        /Switch> <
-        /Router> <
-        /div>
+        /Route> < /
+        Switch > <
+        /Router> < /
+        div >
     )
 }
 
