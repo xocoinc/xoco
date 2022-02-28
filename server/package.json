@@ -18,6 +18,6 @@
     "mpesa-node": "^0.1.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "2.0.15"
   }
 }
