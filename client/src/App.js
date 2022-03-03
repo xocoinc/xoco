@@ -25,9 +25,9 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/productDescription">
+          {/* <Route path="/productDescription">
             <ProductDescription />
-          </Route>
+          </Route> */}
           <Route path="/help">
             <Help />
           </Route>
@@ -47,13 +47,13 @@ function App() {
           <Route path="/checkout">
             <Checkout />
           </Route>
-          <Route path="/product/:categories">
+          <Route axact path="/product/:category">
             <Products />
           </Route>
-          <Route path="/product/:id">
-            <Products />
+          <Route exact path="/product/:id">
+            <ProductDescription />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             {/* <Slider /> */}
             <Categories />
           </Route>
