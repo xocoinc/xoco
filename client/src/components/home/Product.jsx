@@ -16,7 +16,7 @@ const Product = ({ item }) => {
         <img src={item.img} alt='' />
         <div className="info-container">
           <p>{item.title}</p>
-          <Link to='/productDescription' className="link">
+          <Link to={`/product/${item._id}`}className="link">
             <button>Buy</button>
           </Link>
         </div>
