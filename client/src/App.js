@@ -8,14 +8,15 @@ import {
   Redirect,
 } from "react-router-dom"
 import Account from "./components/account/Account"
-import Cart from "./components/cart/Cart"
+import Cart from "./pages/Cart"
 import Sell from "./components/sell/Sell"
 import Help from "./components/help/Help"
 // import Slider from "./components/slider/Slider"
 import Categories from "./components/home/Categories"
-import Products from "./components/home/Products"
-import ProductDescription from "./components/checkout/ProductDescription"
+import Product from "./pages/Product"
 import Checkout from "./components/checkout/Checkout"
+import ProductList from "./pages/ProductList"
+
 // import Product from "./components/home/Product"
 
 function App() {
@@ -47,11 +48,11 @@ function App() {
           <Route path="/checkout">
             <Checkout />
           </Route>
-          <Route axact path="/product/:category">
-            <Products />
+          <Route axact path="/products/:cat">
+            <ProductList />
           </Route>
           <Route exact path="/product/:id">
-            <ProductDescription />
+            <Product />
           </Route>
           <Route exact path="/">
             {/* <Slider /> */}

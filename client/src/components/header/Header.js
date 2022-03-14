@@ -1,13 +1,16 @@
-import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import "./Header.css";
-import { Link } from "react-router-dom";
+import React from "react"
+import SearchIcon from "@mui/icons-material/Search"
+import AccountCircleIcon from "@mui/icons-material/AccountCircle"
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline"
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney"
+import "./Header.css"
+import { Link } from "react-router-dom"
+import { Badge } from "@mui/material"
+import { useSelector } from "react-redux"
 
 const Header = () => {
+  const quantity = useSelector(state => state.cart.quantity)
   return (
     <nav className="header">
       <Link to="/">
@@ -16,7 +19,6 @@ const Header = () => {
           alt=""
           className="nav__logo"
         />
-
       </Link>
       <div className="nav__search">
         <input type="text" className="search" placeholder="Search items" />
@@ -32,11 +34,12 @@ const Header = () => {
           <span className="optionlineTwo">Help</span>
         </Link>
         <Link to="/cart" className="nav__options">
-          <AddShoppingCartIcon className="optionlineOne" />
+          <Badge badgeContent={quantity} color="primary">
+            <AddShoppingCartIcon className="optionlineOne" />
+          </Badge>
           <span className="optionlineTwo">Cart</span>
         </Link>
         <Link to="/sell" className="sell__button">
-
           <span className="sell__buttoncontent">
             <AttachMoneyIcon className="sell__icon" />
             <h5>Sell</h5>
@@ -44,7 +47,7 @@ const Header = () => {
         </Link>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

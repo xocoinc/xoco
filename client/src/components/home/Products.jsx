@@ -1,3 +1,5 @@
+
+  
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import Product from "./Product"
@@ -15,9 +17,10 @@ import  "./Products.css"
         try {
           const res = await axios.get(
             cat
-              ? `http://localhost:3002/api/products?category=${cat}`
-              : "http://localhost:3002/api/products"
+              ? `http://localhost:5000/api/products?category=${cat}`
+              : "http://localhost:5000/api/products"
           );
+          console.log(cat)
           setProducts(res.data);
         } catch (err) {}
       };
