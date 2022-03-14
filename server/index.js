@@ -16,10 +16,12 @@ const user = require("./routes/user")
 const cart = require("./routes/cart")
 const orders = require("./routes/order")
 const products = require("./routes/product")
+const mpesaRouter = require("./routes/mpesa")
 
 //middleware
 app.use(cors())
 app.use(express.json())
+app.use("/api/", mpesaRouter)
 app.use("/api/products", products)
 app.use("/api/orders", orders)
 app.use("/api/auth", auth)
