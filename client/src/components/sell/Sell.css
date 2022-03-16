@@ -1,42 +1,50 @@
-.sell{
-    display: flex;
-    width: 40%;
-    margin: 0 auto;
-    text-align: center;
-    background-color: yellow;
-    padding: 10px;
-    margin-top: 10px;
-    align-items: center;
-    justify-content: center;
+.newProduct {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.sell__form{
+
+.addProductForm {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background-color: yellow;
+    margin-top: 10px;
+    width: 35%;
+    padding: 10px;
     align-items: center;
 }
 
-.input__field > input{
+.addProductItem {
     width: 100%;
-    height: 12px;
-    border: none;
-    outline: none;
-    /* border-radius: 10px; */
-    padding:10px;
-    font-size: 16px;
-}
-.input__field > textarea{
-    width: 100%;
-    height: 100px;
-    border: none;
-    /* border-radius: 10px; */
-    outline: none;
-    font-size: 16px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-.input__field > h1{
-    font-size: 16px;
-    padding: 2px 8px;
-    text-shadow: 0 1px 0 #fff;
+.addProductItem > label {
+  color:#5bccf6;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.addProductItem > input {
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.addProductItem > select {
+  padding: 10px;
+}
+
+.addProductButton {
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #5bccf6;
+  color: yellow;
+  font-weight: 600;
+  cursor: pointer;
 }
