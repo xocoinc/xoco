@@ -1,59 +1,119 @@
-import axios from "axios"
 import { useState } from "react"
 import "./Sell.css"
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage"
+import app from "../../firebase"
+import addProduct from ".././../redux/apiCalls"
+import { useDispatch } from "react-redux"
 
-const Sell = () => {
-  const [post, setPost] = useState(null)
-  const createPost = async () => {
-    try {
-      const post = await axios
-        .post(`http://localhost:3002/api/products`)
-        .then(res => {
-          setPost(res.data)
+export default function NewProduct() {
+  const [inputs, setInputs] = useState({})
+  const [file, setFile] = useState(null)
+  const [cat, setCat] = useState([])
+  const dispatch = useDispatch()
+
+  const handleChange = e => {
+    setInputs(prev => {
+      return { ...prev, [e.target.name]: e.target.value }
+    })
+  }
+  const handleCat = e => {
+    setCat(e.target.value.split(","))
+  }
+
+  const handleClick = e => {
+    e.preventDefault()
+    const fileName = new Date().getTime() + file.name
+    const storage = getStorage(app)
+    const storageRef = ref(storage, fileName)
+    const uploadTask = uploadBytesResumable(storageRef, file)
+    uploadTask.on(
+      "state_changed",
+      snapshot => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        console.log("Upload is " + progress + "% done")
+        switch (snapshot.state) {
+          case "paused":
+            console.log("Upload is paused")
+            break
+          case "running":
+            console.log("Upload is running")
+            break
+          default:
+        }
+      },
+      error => {},
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
+          const product = { ...inputs, img: downloadURL, categories: cat }
+          addProduct(product, dispatch)
         })
-      console.log(post)
-    } catch (err) {
-      if (!post) {
-        console.log(err)
-      }
-    }
+      },
+    )
   }
 
   return (
-    <div className="sell">
-      <form className="sell_form">
-        <div className="input__field">
-          <h1>Product title</h1>
-          <input type="text" />
+    <div className="newProduct">
+      <h1 className="addProductTitle">New Product</h1>
+      <form className="addProductForm">
+        <div className="addProductItem">
+          <label>Image</label>
+          <input
+            type="file"
+            id="file"
+            onChange={e => setFile(e.target.files[0])}
+          />
         </div>
-        <div className="input__field">
-          <h1>Category</h1>
-          <input type="text" />
+        <div className="addProductItem">
+          <label>Title</label>
+          <input
+            name="title"
+            type="text"
+            placeholder="Office chair"
+            onChange={handleChange}
+          />
         </div>
-        <div className="input__field">
-          <h1>Product description</h1>
-          <textarea></textarea>
+        <div className="addProductItem">
+          <label>Description</label>
+          <input
+            name="desc"
+            type="text"
+            placeholder="description..."
+            onChange={handleChange}
+          />
         </div>
-        <div className="input__field">
-          <h1>Product price</h1>
-          <select>
-            <option>Ksh</option>
-            <option>dollar</option>
+        <div className="addProductItem">
+          <label>Price</label>
+          <input
+            name="price"
+            type="number"
+            placeholder="100"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Categories</label>
+          <input
+            type="text"
+            placeholder="beddings, chairs"
+            onChange={handleCat}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Stock</label>
+          <select name="inStock" onChange={handleChange}>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
           </select>
-          <input type="text" />
         </div>
-        <div className="input__field">
-          <h1>Upload image</h1>
-          <input type="file" />
-        </div>
-        <div className="submit_button">
-          <button type="submit" onClick={createPost()}>
-            Post
-          </button>
-        </div>
+        <button onClick={handleClick} className="addProductButton">
+          Create
+        </button>
       </form>
     </div>
   )
 }
-
-export default Sell
