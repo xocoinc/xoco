@@ -31,4 +31,10 @@
 }
 .info > button{
     cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+}
+.info>Link{
+    width: 100%;
+    text-decoration: none;
 }
