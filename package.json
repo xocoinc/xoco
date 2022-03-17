@@ -15,8 +15,10 @@
   "engines": {
     "node": "16.14.1"
   },
+  
   "dependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "express":"*"
   },
   "devDependencies": {
     "nodemon": "2.0.15"
