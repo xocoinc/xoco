@@ -3,21 +3,25 @@ export const categories = [
     id: 1,
     img: `${process.env.PUBLIC_URL}/assets/images/p1.jpg`,
     title: "STUDY TABLES",
+    cat: "tables",
   },
   {
     id: 2,
     img: `${process.env.PUBLIC_URL}/assets/images/lp2.png`,
     title: "LAPTOPS",
+    cat: "laptops",
   },
   {
     id: 3,
     img: `${process.env.PUBLIC_URL}/assets/images/p9.jpg`,
     title: "STUDY CHAIRS",
+    cat: "chair",
   },
   {
     id: 4,
     img: `${process.env.PUBLIC_URL}/assets/images/p11.jpg`,
     title: "Beddings",
+    cat: "beddings",
   },
 ]
 export const popularProduct = [
