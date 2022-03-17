@@ -1,7 +1,8 @@
+import React from "react"
 import styled from "styled-components"
 import Products from "../components/home/Products"
 import { mobile } from "../responsive"
-import { useLocation } from "react-router"
+import { useLocation } from "react-router-dom"
 import { useState } from "react"
 
 const Container = styled.div``
