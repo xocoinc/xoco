@@ -97,11 +97,17 @@ export default function NewProduct() {
         </div>
         <div className="addProductItem">
           <label>Categories</label>
-          <input
+          <select
             type="text"
             placeholder="beddings, chairs"
             onChange={handleCat}
-          />
+          >
+            <option>select Category</option>
+            <option>beddings</option>
+            <option>table</option>
+            <option>chairs</option>
+            <option>laptops</option>
+          </select>
         </div>
         <div className="addProductItem">
           <label>Stock</label>
