@@ -1,0 +1,32 @@
+.success{
+    height: 100vh;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+}
+.success-note{
+    display: flex;
+    background-color: yellow;
+    opacity: 0.8;
+    padding: 2%;
+    width: 100%;
+    /* margin: 18% auto; */
+    justify-content: space-evenly;
+    
+}
+.fa-check{
+    font-size: 64px;
+    color: #5bccf6;
+}
+.success-text{
+    margin-top: 18px;
+    color: #5bccf6;
+    font-weight: 400;
+}
+button:hover{
+    cursor: pointer;
+}
