@@ -16,6 +16,7 @@ import Categories from "./components/home/Categories"
 import Product from "./pages/Product"
 import Checkout from "./components/checkout/Checkout"
 import ProductList from "./pages/ProductList"
+import Success from "./pages/Success"
 
 // import Product from "./components/home/Product"
 
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/sell">
             <Sell />
+          </Route>
+          <Route path="/success">
+            <Success />
           </Route>
           <Route path="/cart">
             <Cart />
