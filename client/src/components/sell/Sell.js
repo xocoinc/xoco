@@ -9,6 +9,7 @@ import {
 import app from "../../firebase"
 import addProduct from ".././../redux/apiCalls"
 import { useDispatch } from "react-redux"
+import { useHistory } from "react-router-dom"
 
 export default function NewProduct() {
   const [inputs, setInputs] = useState({})
@@ -23,6 +24,12 @@ export default function NewProduct() {
   }
   const handleCat = e => {
     setCat(e.target.value.split(","))
+  }
+  const history = useHistory()
+
+  const routeChange = () => {
+    let path = `/success`
+    history.push(path)
   }
 
   const handleClick = e => {
@@ -116,7 +123,10 @@ export default function NewProduct() {
             <option value="false">No</option>
           </select>
         </div>
-        <button onClick={handleClick} className="addProductButton">
+        <button
+          onClick={(handleClick, routeChange)}
+          className="addProductButton"
+        >
           Create
         </button>
       </form>
