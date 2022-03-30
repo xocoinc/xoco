@@ -1,5 +1,5 @@
 .header {
-  background-color: #ffff00;
+  background-color: whitesmoke;
   display: flex;
   padding: 10px;
   column-gap: 10px;
@@ -43,11 +43,11 @@
 .optionlineTwo {
   font-size: 13px;
   font-weight: 800;
-  color: #5bccf6;
+  color: black;
 }
 .optionlineOne {
   font-size: 16px;
-  color: #5bccf6;
+  color: black;
 }
 .optionlineTwo:hover {
   color: aliceblue;
@@ -65,7 +65,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #5bccf6;
+  background-color: black;
   padding: 8px;
   border-radius: 10px;
 }
