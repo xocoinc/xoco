@@ -17,5 +17,5 @@ Runs the api only <br>
 Open [http://localhost:5000](http://localhost:5000)
 
 ### `yarn dev`
-Runs bith client and api 
+Runs both client and api 
 
