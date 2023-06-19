@@ -30,6 +30,6 @@
     "yarn": "1.22.17"
   },
   "devDependencies": {
-    "nodemon": "2.0.15"
+    "nodemon": "2.0.22"
   }
 }
